@@ -19,9 +19,9 @@ df['release_year'] = df['release_date'].dt.year
 
 print(f"Data loaded: {df.shape}")
 
-#VISUALIZATION 1: REVENUE VS BUDGET TRENDS
+# VISUALIZATION 1 — REVENUE VS BUDGET
+# ============================================================
 # Line chart showing how revenue and budget changed over years
-# ####################################################################
 
 # Group by release year and calculate totals
 yearly = df.groupby('release_year').agg(
@@ -31,46 +31,27 @@ yearly = df.groupby('release_year').agg(
 
 fig, ax = plt.subplots(figsize=(12, 6))
 
-# Plot revenue trend line
+# Plot revenue line
 ax.plot(
     yearly['release_year'],
     yearly['total_revenue'],
-    marker='o',         # dot at each data point
+    marker='o',
     color='steelblue',
     linewidth=2,
     label='Total Revenue (MUSD)'
 )
 
-# Plot budget trend line
+# Plot budget line
 ax.plot(
     yearly['release_year'],
     yearly['total_budget'],
-    marker='s',         # square at each data point
+    marker='s',
     color='tomato',
     linewidth=2,
     label='Total Budget (MUSD)'
 )
 
-# Add value labels on each data point
-for _, row in yearly.iterrows():
-    ax.annotate(
-        f"${row['total_revenue']:.0f}M",
-        (row['release_year'], row['total_revenue']),
-        textcoords='offset points',
-        xytext=(0, 8),
-        fontsize=8,
-        color='steelblue'
-    )
-    ax.annotate(
-        f"${row['total_budget']:.0f}M",
-        (row['release_year'], row['total_budget']),
-        textcoords='offset points',
-        xytext=(0, 8),
-        fontsize=8,
-        color='tomato'
-    )
-
-# Show only integer years
+# Show only integer years on x axis
 ax.set_xticks(yearly['release_year'])
 plt.xticks(rotation=45)
 
@@ -83,7 +64,6 @@ plt.tight_layout()
 plt.savefig('data/viz1_revenue_vs_budget.png', dpi=150)
 plt.show()
 print("Visualization 1 saved!")
-
 
 # VISUALIZATION 2: ROI DISTRIBUTION BY GENRE
 
