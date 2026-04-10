@@ -1,0 +1,278 @@
+2026-04-10 18:06:50 | INFO | Note: NumExpr detected 12 cores but "NUMEXPR_MAX_THREADS" not set, so enforcing safe limit of 8.
+2026-04-10 18:06:50 | INFO | NumExpr defaulting to 8 threads.
+2026-04-10 18:06:57 | INFO | ============================================================
+2026-04-10 18:06:57 | INFO | TMDB MOVIE ANALYSIS PIPELINE STARTED
+2026-04-10 18:06:57 | INFO | ============================================================
+2026-04-10 18:06:57 | INFO | Project folders verified.
+2026-04-10 18:06:57 | INFO | Step 1/5 — Fetching movie data from TMDB API...
+2026-04-10 18:06:57 | INFO | Starting data extraction from TMDB API...
+2026-04-10 18:06:57 | INFO | Fetching movie 1/19 — ID: 0
+2026-04-10 18:06:58 | WARNING | Movie ID 0 not found (404). Skipping.
+2026-04-10 18:06:58 | INFO | Fetching movie 2/19 — ID: 299534
+2026-04-10 18:06:59 | INFO | Fetching movie 3/19 — ID: 19995
+2026-04-10 18:07:00 | INFO | Fetching movie 4/19 — ID: 140607
+2026-04-10 18:07:02 | INFO | Fetching movie 5/19 — ID: 299536
+2026-04-10 18:07:03 | INFO | Fetching movie 6/19 — ID: 597
+2026-04-10 18:07:04 | INFO | Fetching movie 7/19 — ID: 135397
+2026-04-10 18:07:06 | INFO | Fetching movie 8/19 — ID: 420818
+2026-04-10 18:07:07 | INFO | Fetching movie 9/19 — ID: 24428
+2026-04-10 18:07:08 | INFO | Fetching movie 10/19 — ID: 168259
+2026-04-10 18:07:09 | INFO | Fetching movie 11/19 — ID: 99861
+2026-04-10 18:07:10 | INFO | Fetching movie 12/19 — ID: 284054
+2026-04-10 18:07:12 | INFO | Fetching movie 13/19 — ID: 12445
+2026-04-10 18:07:13 | INFO | Fetching movie 14/19 — ID: 181808
+2026-04-10 18:07:14 | INFO | Fetching movie 15/19 — ID: 330457
+2026-04-10 18:07:16 | INFO | Fetching movie 16/19 — ID: 351286
+2026-04-10 18:07:17 | INFO | Fetching movie 17/19 — ID: 109445
+2026-04-10 18:07:18 | INFO | Fetching movie 18/19 — ID: 321612
+2026-04-10 18:07:19 | INFO | Fetching movie 19/19 — ID: 260513
+2026-04-10 18:07:21 | INFO | Successfully fetched 18/19 movies.
+2026-04-10 18:07:21 | INFO | Raw data saved to data/raw/raw_movies.csv
+2026-04-10 18:07:21 | INFO | Shape: (18, 26)
+2026-04-10 18:07:21 | INFO | Data extraction complete. 18 movies saved.
+2026-04-10 18:07:21 | INFO | Step 1/5 — Complete.
+2026-04-10 18:07:21 | INFO | Step 2/5 — Cleaning and transforming data...
+2026-04-10 18:07:21 | INFO | Starting data cleaning and transformation...
+2026-04-10 18:07:21 | INFO | Raw data loaded. Shape: (18, 26)
+2026-04-10 18:07:21 | INFO | Dropped 7 irrelevant columns. Shape: (18, 19)
+2026-04-10 18:07:21 | INFO | JSON-like columns parsed successfully.
+2026-04-10 18:07:21 | INFO | JSON values extracted successfully.
+2026-04-10 18:07:21 | INFO | Data types converted successfully.
+2026-04-10 18:07:21 | INFO | 
+belongs_to_collection            object
+budget                            int64
+genres                           object
+id                                int64
+original_language                object
+overview                         object
+popularity                      float64
+poster_path                      object
+production_companies             object
+production_countries             object
+release_date             datetime64[ns]
+revenue                           int64
+runtime                           int64
+spoken_languages                 object
+status                           object
+tagline                          object
+title                            object
+vote_average                    float64
+vote_count                        int64
+dtype: object
+2026-04-10 18:07:21 | INFO | Missing and unrealistic values handled.
+2026-04-10 18:07:21 | INFO | Duplicates removed. Rows before: 18, after: 18, removed: 0
+2026-04-10 18:07:21 | INFO | Rows filtered. Before: 18, after: 18
+2026-04-10 18:07:21 | INFO | Placeholder columns added for cast and crew.
+2026-04-10 18:07:21 | INFO | Columns reordered. Final shape: (18, 22)
+2026-04-10 18:07:21 | INFO | Cleaned data saved to data/processed/clean_movies.csv
+2026-04-10 18:07:21 | INFO | Final shape: (18, 22)
+2026-04-10 18:07:21 | INFO | Missing values:
+id                        0
+title                     0
+tagline                   0
+release_date              0
+genres                    0
+belongs_to_collection     2
+original_language         0
+budget_musd               0
+revenue_musd              0
+production_companies      0
+production_countries      0
+vote_count                0
+vote_average              0
+popularity                0
+runtime                   0
+overview                  0
+spoken_languages          0
+poster_path               0
+cast                     18
+cast_size                18
+director                 18
+crew_size                18
+dtype: int64
+2026-04-10 18:07:21 | INFO | Step 2/5 — Complete.
+2026-04-10 18:07:21 | INFO | Step 3/5 — Fetching cast and crew credits...
+2026-04-10 18:07:21 | INFO | Starting credits enrichment...
+2026-04-10 18:07:21 | INFO | Cleaned data loaded. Shape: (18, 22)
+2026-04-10 18:07:21 | INFO | Fetching credits 1/18 — Avengers: Endgame
+2026-04-10 18:07:22 | INFO | Fetching credits 2/18 — Avatar
+2026-04-10 18:07:24 | INFO | Fetching credits 3/18 — Star Wars: The Force Awakens
+2026-04-10 18:07:25 | INFO | Fetching credits 4/18 — Avengers: Infinity War
+2026-04-10 18:07:26 | INFO | Fetching credits 5/18 — Titanic
+2026-04-10 18:07:27 | INFO | Fetching credits 6/18 — Jurassic World
+2026-04-10 18:07:29 | INFO | Fetching credits 7/18 — The Lion King
+2026-04-10 18:07:30 | INFO | Fetching credits 8/18 — The Avengers
+2026-04-10 18:07:31 | INFO | Fetching credits 9/18 — Furious 7
+2026-04-10 18:07:32 | INFO | Fetching credits 10/18 — Avengers: Age of Ultron
+2026-04-10 18:07:34 | INFO | Fetching credits 11/18 — Black Panther
+2026-04-10 18:07:35 | INFO | Fetching credits 12/18 — Harry Potter and the Deathly Hallows: Part 2
+2026-04-10 18:07:36 | INFO | Fetching credits 13/18 — Star Wars: The Last Jedi
+2026-04-10 18:07:38 | INFO | Fetching credits 14/18 — Frozen II
+2026-04-10 18:07:39 | INFO | Fetching credits 15/18 — Jurassic World: Fallen Kingdom
+2026-04-10 18:07:40 | INFO | Fetching credits 16/18 — Frozen
+2026-04-10 18:07:42 | INFO | Fetching credits 17/18 — Beauty and the Beast
+2026-04-10 18:07:43 | INFO | Fetching credits 18/18 — Incredibles 2
+2026-04-10 18:07:44 | INFO | Credits enrichment complete.
+2026-04-10 18:07:44 | INFO | Missing values after enrichment:
+cast         0
+director     0
+cast_size    0
+crew_size    0
+dtype: int64
+2026-04-10 18:07:44 | INFO | Enriched data saved to data/processed/final_movies.csv
+2026-04-10 18:07:44 | INFO | Step 3/5 — Complete.
+2026-04-10 18:07:44 | INFO | Step 4/5 — Running KPI analysis...
+2026-04-10 18:07:44 | INFO | Starting KPI analysis...
+2026-04-10 18:07:44 | INFO | Enriched data loaded. Shape: (18, 22)
+2026-04-10 18:07:44 | INFO | KPI columns calculated: profit_musd, roi
+2026-04-10 18:07:44 | INFO | Ranking computed: highest_revenue
+2026-04-10 18:07:44 | INFO | 
+   rank                         title       director  revenue_musd  budget_musd  profit_musd        roi  vote_average  vote_count  popularity
+0     1                        Avatar  James Cameron   2923.706026        237.0  2686.706026  12.336312         7.601       33744     33.6875
+1     2             Avengers: Endgame  Anthony Russo   2799.439100        356.0  2443.439100   7.863593         8.234       27467     31.0011
+2     3                       Titanic  James Cameron   2264.162353        200.0  2064.162353  11.320812         7.900       26975     28.1374
+3     4  Star Wars: The Force Awakens    J.J. Abrams   2068.223624        245.0  1823.223624   8.441729         7.250       20418     10.6492
+4     5        Avengers: Infinity War  Anthony Russo   2052.415039        300.0  1752.415039   6.841383         8.234       31706     45.0378
+
+2026-04-10 18:07:44 | INFO | Ranking computed: highest_budget
+2026-04-10 18:07:44 | INFO | 
+   rank                         title       director  budget_musd  revenue_musd  profit_musd       roi  vote_average  vote_count  popularity
+0     1             Avengers: Endgame  Anthony Russo        356.0   2799.439100  2443.439100  7.863593         8.234       27467     31.0011
+1     2        Avengers: Infinity War  Anthony Russo        300.0   2052.415039  1752.415039  6.841383         8.234       31706     45.0378
+2     3      Star Wars: The Last Jedi   Rian Johnson        300.0   1332.698830  1032.698830  4.442329         6.756       16214     56.6615
+3     4                 The Lion King    Jon Favreau        260.0   1662.020819  1402.020819  6.392388         7.099       10689     12.1440
+4     5  Star Wars: The Force Awakens    J.J. Abrams        245.0   2068.223624  1823.223624  8.441729         7.250       20418     10.6492
+
+2026-04-10 18:07:44 | INFO | Ranking computed: highest_profit
+2026-04-10 18:07:44 | INFO | 
+   rank                         title       director  profit_musd  budget_musd  revenue_musd        roi  vote_average  vote_count  popularity
+0     1                        Avatar  James Cameron  2686.706026        237.0   2923.706026  12.336312         7.601       33744     33.6875
+1     2             Avengers: Endgame  Anthony Russo  2443.439100        356.0   2799.439100   7.863593         8.234       27467     31.0011
+2     3                       Titanic  James Cameron  2064.162353        200.0   2264.162353  11.320812         7.900       26975     28.1374
+3     4  Star Wars: The Force Awakens    J.J. Abrams  1823.223624        245.0   2068.223624   8.441729         7.250       20418     10.6492
+4     5        Avengers: Infinity War  Anthony Russo  1752.415039        300.0   2052.415039   6.841383         8.234       31706     45.0378
+
+2026-04-10 18:07:44 | INFO | Ranking computed: lowest_profit
+2026-04-10 18:07:44 | INFO | 
+   rank                           title      director  profit_musd  budget_musd  revenue_musd       roi  vote_average  vote_count  popularity
+0     1        Star Wars: The Last Jedi  Rian Johnson  1032.698830        300.0   1332.698830  4.442329         6.756       16214     56.6615
+1     2                   Incredibles 2     Brad Bird  1043.225667        200.0   1243.225667  6.216128         7.452       13595      8.7941
+2     3            Beauty and the Beast   Bill Condon  1106.115964        160.0   1266.115964  7.913225         6.968       15955     11.7856
+3     4                          Frozen    Chris Buck  1124.219009        150.0   1274.219009  8.494793         7.248       17474     17.3201
+4     5  Jurassic World: Fallen Kingdom  J. A. Bayona  1140.469037        170.0   1310.469037  7.708641         6.532       12661     11.1214
+
+2026-04-10 18:07:44 | INFO | Ranking computed: highest_roi
+2026-04-10 18:07:44 | INFO | 
+   rank                                         title         director        roi  budget_musd  revenue_musd  profit_musd  vote_average  vote_count  popularity
+0     1                                        Avatar    James Cameron  12.336312        237.0   2923.706026  2686.706026         7.601       33744     33.6875
+1     2                                       Titanic    James Cameron  11.320812        200.0   2264.162353  2064.162353         7.900       26975     28.1374
+2     3                                Jurassic World  Colin Trevorrow  11.143583        150.0   1671.537444  1521.537444         6.699       21450      9.6551
+3     4  Harry Potter and the Deathly Hallows: Part 2      David Yates  10.732090        125.0   1341.511219  1216.511219         8.080       21826     19.2414
+4     5                                     Frozen II     Jennifer Lee   9.691223        150.0   1453.683476  1303.683476         7.232       10215     22.4539
+
+2026-04-10 18:07:44 | INFO | Ranking computed: lowest_roi
+2026-04-10 18:07:44 | INFO | 
+   rank                     title      director       roi  budget_musd  revenue_musd  profit_musd  vote_average  vote_count  popularity
+0     1  Star Wars: The Last Jedi  Rian Johnson  4.442329        300.0   1332.698830  1032.698830         6.756       16214     56.6615
+1     2   Avengers: Age of Ultron   Joss Whedon  5.980441        235.0   1405.403694  1170.403694         7.270       24265     18.1590
+2     3             Incredibles 2     Brad Bird  6.216128        200.0   1243.225667  1043.225667         7.452       13595      8.7941
+3     4             The Lion King   Jon Favreau  6.392388        260.0   1662.020819  1402.020819         7.099       10689     12.1440
+4     5             Black Panther  Ryan Coogler  6.749630        200.0   1349.926083  1149.926083         7.362       23338     14.7552
+
+2026-04-10 18:07:44 | INFO | Ranking computed: most_voted
+2026-04-10 18:07:44 | INFO | 
+   rank                   title       director  vote_count  budget_musd  revenue_musd  profit_musd        roi  vote_average  popularity
+0     1            The Avengers    Joss Whedon       37081        220.0   1518.815515  1298.815515   6.903707         7.993     54.2816
+1     2                  Avatar  James Cameron       33744        237.0   2923.706026  2686.706026  12.336312         7.601     33.6875
+2     3  Avengers: Infinity War  Anthony Russo       31706        300.0   2052.415039  1752.415039   6.841383         8.234     45.0378
+3     4       Avengers: Endgame  Anthony Russo       27467        356.0   2799.439100  2443.439100   7.863593         8.234     31.0011
+4     5                 Titanic  James Cameron       26975        200.0   2264.162353  2064.162353  11.320812         7.900     28.1374
+
+2026-04-10 18:07:44 | INFO | Ranking computed: highest_rated
+2026-04-10 18:07:44 | INFO | 
+   rank                                         title       director  vote_average  budget_musd  revenue_musd  profit_musd        roi  vote_count  popularity
+0     1                             Avengers: Endgame  Anthony Russo         8.234        356.0   2799.439100  2443.439100   7.863593       27467     31.0011
+1     2                        Avengers: Infinity War  Anthony Russo         8.234        300.0   2052.415039  1752.415039   6.841383       31706     45.0378
+2     3  Harry Potter and the Deathly Hallows: Part 2    David Yates         8.080        125.0   1341.511219  1216.511219  10.732090       21826     19.2414
+3     4                                  The Avengers    Joss Whedon         7.993        220.0   1518.815515  1298.815515   6.903707       37081     54.2816
+4     5                                       Titanic  James Cameron         7.900        200.0   2264.162353  2064.162353  11.320812       26975     28.1374
+
+2026-04-10 18:07:44 | INFO | Ranking computed: lowest_rated
+2026-04-10 18:07:44 | INFO | 
+   rank                           title         director  vote_average  budget_musd  revenue_musd  profit_musd        roi  vote_count  popularity
+0     1  Jurassic World: Fallen Kingdom     J. A. Bayona         6.532        170.0   1310.469037  1140.469037   7.708641       12661     11.1214
+1     2                  Jurassic World  Colin Trevorrow         6.699        150.0   1671.537444  1521.537444  11.143583       21450      9.6551
+2     3        Star Wars: The Last Jedi     Rian Johnson         6.756        300.0   1332.698830  1032.698830   4.442329       16214     56.6615
+3     4            Beauty and the Beast      Bill Condon         6.968        160.0   1266.115964  1106.115964   7.913225       15955     11.7856
+4     5                   The Lion King      Jon Favreau         7.099        260.0   1662.020819  1402.020819   6.392388       10689     12.1440
+
+2026-04-10 18:07:44 | INFO | Ranking computed: most_popular
+2026-04-10 18:07:44 | INFO | 
+   rank                     title       director  popularity  budget_musd  revenue_musd  profit_musd        roi  vote_average  vote_count
+0     1  Star Wars: The Last Jedi   Rian Johnson     56.6615        300.0   1332.698830  1032.698830   4.442329         6.756       16214
+1     2              The Avengers    Joss Whedon     54.2816        220.0   1518.815515  1298.815515   6.903707         7.993       37081
+2     3    Avengers: Infinity War  Anthony Russo     45.0378        300.0   2052.415039  1752.415039   6.841383         8.234       31706
+3     4                    Avatar  James Cameron     33.6875        237.0   2923.706026  2686.706026  12.336312         7.601       33744
+4     5         Avengers: Endgame  Anthony Russo     31.0011        356.0   2799.439100  2443.439100   7.863593         8.234       27467
+
+2026-04-10 18:07:44 | INFO | Franchise vs Standalone analysis complete.
+2026-04-10 18:07:44 | INFO | 
+            movie_count  mean_revenue  median_roi  mean_budget  mean_popularity  mean_rating
+movie_type                                                                                  
+Franchise            16       1682.67        7.79        218.0            23.38         7.39
+Standalone            2       1765.14        9.62        180.0            19.96         7.43
+
+2026-04-10 18:07:44 | INFO | Franchise analysis complete.
+2026-04-10 18:07:44 | INFO | 
+                                     total_movies  total_budget  mean_budget  total_revenue  mean_revenue  mean_rating
+belongs_to_collection                                                                                                 
+The Avengers Collection                         4        1111.0       277.75        7776.07       1944.02         7.93
+Star Wars Collection                            2         545.0       272.50        3400.92       1700.46         7.00
+Jurassic Park Collection                        2         320.0       160.00        2982.01       1491.00         6.62
+Avatar Collection                               1         237.0       237.00        2923.71       2923.71         7.60
+Frozen Collection                               2         300.0       150.00        2727.90       1363.95         7.24
+The Lion King (Reboot) Collection               1         260.0       260.00        1662.02       1662.02         7.10
+The Fast and the Furious Collection             1         190.0       190.00        1515.40       1515.40         7.22
+Black Panther Collection                        1         200.0       200.00        1349.93       1349.93         7.36
+Harry Potter Collection                         1         125.0       125.00        1341.51       1341.51         8.08
+The Incredibles Collection                      1         200.0       200.00        1243.23       1243.23         7.45
+
+2026-04-10 18:07:44 | INFO | Director analysis complete.
+2026-04-10 18:07:44 | INFO | 
+                 total_movies  total_revenue  mean_rating
+director                                                 
+James Cameron               2        5187.87         7.75
+Anthony Russo               2        4851.85         8.23
+Joss Whedon                 2        2924.22         7.63
+J.J. Abrams                 1        2068.22         7.25
+Colin Trevorrow             1        1671.54         6.70
+Jon Favreau                 1        1662.02         7.10
+James Wan                   1        1515.40         7.22
+Jennifer Lee                1        1453.68         7.23
+Ryan Coogler                1        1349.93         7.36
+David Yates                 1        1341.51         8.08
+Rian Johnson                1        1332.70         6.76
+J. A. Bayona                1        1310.47         6.53
+Chris Buck                  1        1274.22         7.25
+Bill Condon                 1        1266.12         6.97
+Brad Bird                   1        1243.23         7.45
+
+2026-04-10 18:07:44 | INFO | Search 1: Sci-Fi Action movies with Bruce Willis
+2026-04-10 18:07:44 | INFO | Search results: 0 movies found (cast=Bruce Willis, director=None, genre=Action)
+2026-04-10 18:07:44 | INFO | Search 2: Uma Thurman + Quentin Tarantino movies
+2026-04-10 18:07:44 | INFO | Search results: 0 movies found (cast=Uma Thurman, director=Quentin Tarantino, genre=None)
+2026-04-10 18:07:44 | INFO | Analysis data saved to data/processed/analysis_movies.csv
+2026-04-10 18:07:44 | INFO | Step 4/5 — Complete.
+2026-04-10 18:07:44 | INFO | Step 5/5 — Generating visualizations...
+2026-04-10 18:07:44 | INFO | Starting visualization generation...
+2026-04-10 18:07:44 | INFO | Analysis data loaded. Shape: (18, 26)
+2026-04-10 18:07:46 | INFO | Chart saved: outputs/viz1_revenue_vs_budget.png
+2026-04-10 18:07:46 | INFO | Chart saved: outputs/viz2_roi_by_genre.png
+2026-04-10 18:07:47 | INFO | Chart saved: outputs/viz3_popularity_vs_rating.png
+2026-04-10 18:07:48 | INFO | Chart saved: outputs/viz4_yearly_trends.png
+2026-04-10 18:07:49 | INFO | Chart saved: outputs/viz5_franchise_vs_standalone.png
+2026-04-10 18:07:49 | INFO | All visualizations saved to outputs/
+2026-04-10 18:07:49 | INFO | Step 5/5 — Complete.
+2026-04-10 18:07:49 | INFO | ============================================================
+2026-04-10 18:07:49 | INFO | PIPELINE COMPLETED SUCCESSFULLY
+2026-04-10 18:07:49 | INFO | ============================================================

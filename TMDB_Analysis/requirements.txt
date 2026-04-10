@@ -1,0 +1,25 @@
+# ============================================================
+# requirements.txt — TMDB Movie Analysis Project
+# ============================================================
+# Install all dependencies with:
+# pip install -r requirements.txt
+# ============================================================
+
+# API requests
+requests==2.31.0
+
+# Data manipulation
+pandas==2.2.0
+numpy==1.26.4
+
+# Visualization
+matplotlib==3.8.2
+
+# Environment variable management
+python-dotenv==1.0.0
+
+# Testing
+pytest==8.0.0
+
+# Utilities
+urllib3==2.2.0
